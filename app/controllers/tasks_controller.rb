@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
 
   def index
   	@tasks = current_user.tasks
@@ -31,17 +31,18 @@ class TasksController < ApplicationController
 
   def destroy
   	@task = target_task params[:id]
-  	@task.destroy
+    @task.destroy
+    flash[:sucess] = "削除します"
   	redirect_to tasks_url
   end
 
   private
   def target_task task_id
-  	current_user.task.where(id: task_id).take
+  	current_user.tasks.where(id: task_id).take
   end
 
   def task_params
-  	params.require(:task).permit(:title, :description)
+  	params.require(:task).permit(:title, :description, :image)
   end
 
 end

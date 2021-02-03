@@ -1,5 +1,6 @@
 <h1>Tasks#show</h1>
 <p>Find me in app/views/tasks/show.html.erb</p>
+<p> content_for(:javascript_pack_tag, javascript_pack_tag('that_container', 'data-turbolinks-track':'reload'))</p>
 <table>
   <tr>
     <th>Title</th>
@@ -12,6 +13,15 @@
     <th>User.Email</th>
     <td><%= @task.user.email %></td>
   </tr>
+  <tr>
+  <th>  
+<% if @task.image? %>
+  <%= image_tag @task.image.url %>
+<% else %>
+  <%= image_tag "noimage.gif" %>
+<% end %></th>
+  </tr>
+
 </table>
 <p><%= link_to '一覧に戻る', tasks_url %></p>
 
