@@ -1,12 +1,12 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
-<p> content_for(:javascript_pack_tag, javascript_pack_tag('that_container', 'data-turbolinks-track':'reload'))</p>
+<h1>画像詳細</h1>
+<p>以下の内容で投稿されました</p>
+
 <table>
   <tr>
-    <th>Title</th>
+    <th>題名</th>
     <td><%= @task.title %></td></tr>
   <tr>
-    <th>Description</th>
+    <th>説明</th>
     <td><%= @task.description %></td>
   </tr>
   <tr>
@@ -18,10 +18,10 @@
 <% if @task.image? %>
   <%= image_tag @task.image.url %>
 <% else %>
-  <%= image_tag "noimage.gif" %>
+  
 <% end %></th>
   </tr>
 
 </table>
-<p><%= link_to '一覧に戻る', tasks_url %></p>
+<p><%= link_to '一覧に戻る', tasks_path, method: :get %></p>
 

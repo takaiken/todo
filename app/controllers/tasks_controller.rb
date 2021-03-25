@@ -1,13 +1,13 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
 
   def index
-  	@tasks = current_user.tasks
+  	@tasks = Task.all
   end
 
   def show
   	@task = target_task params[:id]
   end
+  
 
   def new
   	@task = Task.new
@@ -42,7 +42,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-  	params.require(:task).permit(:title, :description, :image)
+  	params.permit(:title, :description, :image)
   end
 
 end

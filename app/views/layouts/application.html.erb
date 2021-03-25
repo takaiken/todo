@@ -4,8 +4,11 @@
     <title>ToDo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
@@ -13,20 +16,36 @@
 
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
 
+    
   </head>
 
   <body>
-    
-    <% if user_signed_in? %>
 
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-
-    <% else %>
-    <%= link_to "新規登録", new_user_registration_path %>
-
-    <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-    <%= yield %>
+  <% if user_signed_in? %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+  <% else %>
+  <p class="text-right">
+  <%= link_to "新規登録", new_user_registration_path %></p>
+  <p class="btn-right">
+  <%= link_to "ログイン", new_user_session_path %></p>
+  <p><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path %></p>
+  <% end %>
+  <%= yield %>
   </body>
+        
+        <!-- Footer-->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
