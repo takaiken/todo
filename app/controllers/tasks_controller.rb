@@ -4,8 +4,9 @@ class TasksController < ApplicationController
   	@tasks = Task.all
   end
 
-  def show
+  def show 
   	@task = target_task params[:id]
+
   end
   
 
@@ -42,7 +43,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-  	params.permit(:title, :description, :image)
+  	params.require(:task).permit(:title, :description, :image)
   end
 
 end

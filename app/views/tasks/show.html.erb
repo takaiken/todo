@@ -1,26 +1,23 @@
 <h1>画像詳細</h1>
 <p>以下の内容で投稿されました</p>
 
+<p id="notice"><%= notice %></p>
 <table>
+  <%= form_for(@task) do |f| %>
   <tr>
-    <th>題名</th>
-    <td><%= @task.title %></td></tr>
-  <tr>
+    <th>題名</th> 
+    <th><%= @task.title %></th>
     <th>説明</th>
-    <td><%= @task.description %></td>
+    <th><%= @task.description %></th>
   </tr>
   <tr>
     <th>User.Email</th>
     <td><%= @task.user.email %></td>
   </tr>
   <tr>
-  <th>  
-<% if @task.image? %>
-  <%= image_tag @task.image.url %>
-<% else %>
-  
-<% end %></th>
-  </tr>
+  <th>
+  <td><%= image_tag (@task.image.url) if @task.image.present? %></td>
+<% end %>
 
 </table>
 <p><%= link_to '一覧に戻る', tasks_path, method: :get %></p>

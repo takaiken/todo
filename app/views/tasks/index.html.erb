@@ -14,10 +14,6 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    
-        <!-- Navigation-->
-        
-        <!-- Masthead-->
 
 <h1 class="text-center">新規作成</h1>
 <h1 class="text-center">やるべきことを画像と共に記載しよう！</h1>
@@ -31,26 +27,12 @@
     <td><%= task.id %></td>
     <td><%= task.title %></td>
     <td><%= task.description %></td>
+    <td><%= image_tag task.image.url, width: 100 %></td>
     <td><button class="bt01 btn-light"><%= button_to 'Show', task_path(task), method: :get %></td></button>
     <td><button class="bt02 btn-light"><%= button_to 'Edit', task_path(task) %></td></button>
 
-    <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <<h4>class="modal-title" id="myModalLabel">削除確認画面</h4></h4>
-                    </div>
-                    <div class="modal-body">
-                        <label>データを削除しますか？</label>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <td><button class="btn btn-danger"><%= button_to 'Delete', task_path(task),  method: :delete, data: {confirm:"削除してもよろしいですか" } %></td></button>
+    
+    <td><button class="btn btn-danger"><%= button_to 'Delete', task,  method: :delete, data: { confirm: '削除してもよろしいですか' } %></td></button>
   </tr>
   <% end %>
 </table>
