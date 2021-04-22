@@ -7,17 +7,15 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("bootstrap");
-require("@fortawesome/fontawesome-free");
+require("bootstrap")
+require("@fortawesome/fontawesome-free")
+require("jquery")
 
-require ('user/holder');
+require ("messages.js")
 
-
-//require holder
-//require_tree .
 //= require jquery_ujs
+//require_tree .
 //= require turbolinks
-//= require jquery3
 //= require popper
 //= require bootstrap
 // Uncomment to copy all static images under ../images to the output folder and reference

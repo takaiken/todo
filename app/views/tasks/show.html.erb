@@ -4,12 +4,10 @@
 <p id="notice"><%= notice %></p>
 <table>
   <%= form_for(@task) do |f| %>
-  <tr>
-    <th>題名</th> 
+    <th>題名</th> <br>
     <th><%= @task.title %></th>
     <th>説明</th>
     <th><%= @task.description %></th>
-  </tr>
   <tr>
     <th>User.Email</th>
     <td><%= @task.user.email %></td>
