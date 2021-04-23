@@ -3,4 +3,8 @@ class Task < ApplicationRecord
 	mount_uploader :image, ImageUploader
 
 
+  def self.search(search)
+    return Sumple.all() unless search
+    Sumple.where('title LIKE(?)', "%#{search}%")
+  end
 end

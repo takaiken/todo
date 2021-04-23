@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 4.1.1'
 
 gem 'jquery-rails'  # <- ない人追加
-gem 'jquery-ui-rails'  # <- ない人追加
 
 gem 'devise'
 

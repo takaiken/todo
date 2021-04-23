@@ -11,8 +11,8 @@ $(document).on('turbolinks:load', function () { // このコードを追加す�
       .done(function (data) {
         $('.js-messages li').remove();
 
-        $(data).each(function (i, message) {
-          $('.js-messages').append(`<li class="message"><a href="/messages/${message.id}">${message.title}</a></li>`
+        $(data).each(function (i, task) {
+          $('.js-messages').append(`<li class="message"><a href="/tasks/${task.id}">${task.title}</a></li>`
             );
         });
       })

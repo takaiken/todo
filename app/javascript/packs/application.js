@@ -13,9 +13,7 @@ require("jquery")
 
 require ("messages.js")
 
-//= require jquery_ujs
-//require_tree .
-//= require turbolinks
+//= require_tree .
 //= require popper
 //= require bootstrap
 // Uncomment to copy all static images under ../images to the output folder and reference
