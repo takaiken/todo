@@ -6,7 +6,6 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
 
 gem 'serviceworker-rails'
 # Use Puma as the app server
@@ -50,6 +49,8 @@ end
 
 group :production do
   gem 'pg'
+
+  gem 'rails_12factor', '0.0.2'
 end
 
 group :development do
