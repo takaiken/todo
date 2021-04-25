@@ -3,7 +3,7 @@ class Messages::SearchesController < ApplicationController
 	 @tasks = Task.where('title LIKE(?)', "%#{params[:title]}%")
 	 respond_to do |format|
 			format.html { redirect_to :root }
-			format.json { render json: @tasks }
+			format.json { render json: @task }
 		end
 	end
 

@@ -9,13 +9,13 @@ $(document).on('turbolinks:load', function () { // このコードを追加す�
         dataType: 'json'
       })
       .done(function (data) {
-        $('.js-messages li').remove();
+        $('').remove();
 
         $(data).each(function (i, task) {
-          $('.js-messages').append(`<li class="message"><a href="/tasks/${task.id}">${task.title}</a></li>`
+          $('').append(`<li class="message"><a href="/tasks/${@task.id}">${@task.title}</a></li>`
             );
         });
       })
     });
   });
-}); // このコードを追加する
+}); 
