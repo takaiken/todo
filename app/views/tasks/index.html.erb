@@ -41,8 +41,9 @@
     <td><button class="btn btn-danger"><%= button_to 'Delete', task_path(task), method: :delete, data: { confirm: "削除してもよろしいですか" } %></td></button>
     <% end %>
   </tr>
-  
 </table>
+<%= paginate @tasks %>
+
 <button type="button" class="btn btn-light"><%= link_to 'ToDoの作成', new_task_path %></button>
 
 
