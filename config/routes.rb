@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :messages, only: :index, defaults: { format: :json }
  end
 
+  post 'like/:id' => 'likes#create', as: 'create_like'
   resources :tasks
+  
   root 'homes#top'
   post 'tasks/:id' => 'tasks#edit'
   get 'taksks/:id' => 'tasks#show'

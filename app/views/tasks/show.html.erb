@@ -1,6 +1,5 @@
 <h1>画像詳細</h1>
 <p>以下の内容で投稿されました</p>
-
 <p id="notice"><%= notice %></p>
 <table>
   <%= form_for(@task) do |f| %>
@@ -12,8 +11,19 @@
     <th>User.Email</th>
     <td><%= @task.user.email %></td>
   </tr>
-  <tr>
-  <th>
+
+  <h3>いいね件数: <%= @task.likes.count %></h3>
+  <% if current_user.already_liked?(@like) %>
+    <%= button_to 'いいねを取り消す', like_path(@like), method: :delete %>
+  <% else %>
+    <%= button_to 'いいね', create_like_path, method: :post %>
+  <% end %>
+
+  <h2>いいねしたユーザー</h2>
+  <% @task.liked_users.each do |user| %>
+   <li><%= user.email %></li>
+  <% end %>
+
   <td><%= image_tag (@task.image.url) if @task.image.present? %></td>
 <% end %>
 

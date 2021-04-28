@@ -9,10 +9,10 @@ $(document).on('turbolinks:load', function () { // このコードを追加す�
         dataType: 'json'
       })
       .done(function (data) {
-        $('').remove();
+        $('js-text_field').remove();
 
         $(data).each(function (i, task) {
-          $('').append(`<li class="message"><a href="/tasks/${@task.id}">${@task.title}</a></li>`
+          $('js-text_field').append(`<li class="message"><a href="/tasks/${@task.id}">${@task.title}</a></li>`
             );
         });
       })
