@@ -8,14 +8,4 @@ $(document).on('turbolinks:load', function () { // このコードを追加す�
         data: { title: title }, //("title=" + title),
         dataType: 'json'
       })
-      .done(function (data) {
-        $('js-text_field').remove();
-
-        $(data).each(function (i, task) {
-          $('js-text_field').append(`<li class="message"><a href="/tasks/${@task.id}">${@task.title}</a></li>`
-            );
-        });
-      })
-    });
-  });
-}); 
+      
