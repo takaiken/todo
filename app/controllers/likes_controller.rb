@@ -12,4 +12,9 @@ class LikesController < ApplicationController
 		@like.destroy
 		redirect_back(fallback_location: root_path)
 	end
+
+	def task_params
+  	params.require(:task).permit(:title, :description, :image)
+    end
+
 end

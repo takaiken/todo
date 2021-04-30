@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_050917) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.integer "task_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
